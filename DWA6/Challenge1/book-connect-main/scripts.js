@@ -171,7 +171,7 @@ class BookPreviewsManager {
     `;
 
   }
-}
+};
 
 // Define a class for managing book details
 class BookDetailsManager {
@@ -221,7 +221,7 @@ class BookDetailsManager {
     // Close book details modal
     // ...
   }
-}
+};
 
 // Define a class for managing search and filtering
 class SearchFilterManager {
@@ -239,6 +239,7 @@ class SearchFilterManager {
         <span class="list__remaining"> (${remaining > 0 ? remaining : 0})</span>
       `;
     }
+
     else {
       dataListMessage.classList.remove('list__message_show');
       dataListItems.innerHTML = '';
@@ -263,7 +264,7 @@ class SearchFilterManager {
       `;
     };
   
-  }
+  };
 
   applyFilters() {
     // Apply search and filter criteria
@@ -318,7 +319,7 @@ class SearchFilterManager {
       };
     };
   }
-}
+};
 
 // Define a class for managing theme selection
 class ThemeManager {
@@ -337,7 +338,7 @@ class ThemeManager {
       night: ['10, 10, 20', '255, 255, 255']
     };
   }
-}
+};
 
 // Attach event listeners
 dataListButton.addEventListener('click', () => {
