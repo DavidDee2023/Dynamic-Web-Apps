@@ -219,44 +219,51 @@ const css = {
   night: ['10, 10, 20', '255, 255, 255']
 }
 
-//Let the value of the dataSettingsTheme input determine the user's preferred color scheme.t.
-dataSettingsTheme.value = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? 'night' : 'day'
+//Let the value of the dataSettingsTheme input determine the user's preferred color scheme.t. with the use of encapsulatiion
+class ThemeManager {
+  constructor(css) {
+    this.css = css;
+  }
 
-
-function applyTheme(selectedTheme) {
-  document.documentElement.style.setProperty('--color-light', css[selectedTheme][0]);
-  document.documentElement.style.setProperty('--color-dark', css[selectedTheme][1]);
-};
+  applyTheme(selectedTheme) {
+    document.documentElement.style.setProperty('--color-light', this.css[selectedTheme][0]);
+    document.documentElement.style.setProperty('--color-dark', this.css[selectedTheme][1]);
+  }
 
 
 /**
  * Created functions to handle the event listeners for opening and closing the settings overlay, and for submitting the theme selection form.
 */
 
-function handleSettingsOpen() {
+handleSettingsOpen() {
   dataSettingsOverlay.showModal();
 }
 
-function handleSettingsClose() {
+handleSettingsClose() {
   dataSettingsOverlay.close();
 }
 
-function handleThemeSubmit(event) {
+handleThemeSubmit(event) {
   event.preventDefault();
   const formSubmit = new FormData(event.target);
   const selected = Object.fromEntries(formSubmit);
 
-  applyTheme(selected.theme);
-  
-  handleSettingsClose();
-};
+  this.applyTheme(selected.theme);
+
+  this.handleSettingsClose();
+}
+}
 
 /**
  * Modified my existing event listeners to use these abstraction functions.
 */
 
-dataHeaderSettings.addEventListener('click', handleSettingsOpen);
+// Usage
 
-dataSettingsCancel.addEventListener('click', handleSettingsClose);
+const themeManager = new ThemeManager(css);
 
-dataSettingsForm.addEventListener('submit', handleThemeSubmit);
+dataHeaderSettings.addEventListener('click', () => themeManager.handleSettingsOpen());
+
+dataSettingsCancel.addEventListener('click', () => themeManager.handleSettingsClose());
+
+dataSettingsForm.addEventListener('submit', (event) => themeManager.handleThemeSubmit(event));
