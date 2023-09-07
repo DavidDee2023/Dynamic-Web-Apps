@@ -8,8 +8,8 @@ html{
 
 body{
     margin: 0;
-    background-color:#424250;
-    color:#fff;
+    background-color:#cde18c;
+    color:#8a5656;
     font-family:'Courier New', Courier, monospace;
     flex-direction: column;
     justify-content: space-between;
@@ -22,13 +22,13 @@ header{
 
 .header__title{
     font-size: 3rem;
-    color:#ffffff8c;
+    color:hsla(158, 51%, 37%, 0.549);
 }
 
 
 
 .counter{
-    background-color: #33333d;
+    background-color: #323265;
 }
 
 .counter__value{
@@ -39,7 +39,7 @@ header{
     font-size: 6rem;
     font-weight: 900;
     background: none;
-    color:#ffffff8c;
+    color:#e119268c;
     border-width: 0;
     border-bottom: 1px solid #d2d6dc;
 }
