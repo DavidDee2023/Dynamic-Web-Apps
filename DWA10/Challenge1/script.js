@@ -1,9 +1,13 @@
 // scripts.js
 
-const MAX_NUMBER = 10;
-const MIN_NUMBER = -10;
+const MAX_NUMBER = 25;
+const MIN_NUMBER = -25;
 const STEP_AMOUNT = 1;
 const RESET_VALUE = 0;
+
+/**
+ *  domElements is created to store references to various HTML elements using document.querySelector().
+ */
 
 const domElements = {
     number: document.querySelector('[data-key="number"]'),
@@ -15,6 +19,11 @@ const domElements = {
     }
 }
 
+/**
+ * The subtractHandler function is responsible for handling the subtraction operation.
+ * It retrieves the current value of the number input field, subtracts STEP_AMOUNT from it, and updates the input field with the new value.
+ * It then checks if the "add" button is disabled (meaning the number was at its maximum), and if so, it enables the "add" butto
+ */
 const subtractHandler = () => {
     const newValue = parseInt(domElements.number.value) - STEP_AMOUNT;
     domElements.number.value = newValue;
@@ -28,6 +37,11 @@ const subtractHandler = () => {
     }
 }
 
+/**
+ * The addHandler function handles the addition operation in a similar way.
+ * It adds STEP_AMOUNT to the current value, updates the input field, and checks if the "subtract" button is disabled (indicating the number was at its minimum).
+ * If the "subtract" button was disabled, it enables it.
+ */
 const addHandler = () => {
     const newValue = parseInt(domElements.number.value) + STEP_AMOUNT;
     domElements.number.value = newValue;
