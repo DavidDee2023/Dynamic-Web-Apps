@@ -14,7 +14,7 @@ import {
   dataListTitle, dataListSubtitle, dataListDescription, dataListClose, dataSearchOverlay, dataSearchForm, dataSearchTitle,
   dataSearchGenres, dataSearchAuthors, dataSearchCancel, dataSettingsOverlay, dataSettingsForm, dataSettingsTheme, dataSettingsCancel
 
-} from './domElements.js';
+} from './Encapsulation/domElements.js';
 
 
 /**
@@ -79,7 +79,7 @@ const bookExtracted = books.slice(startIndex, endIndex)
  * When clicked, it loads the next set of book previews, updates the remaining book count, and disables the button if there are no more books to display.
 */
 
-import { loadInitialBookPreviews, setupShowMoreButton } from './listButtonHandler.js';
+import { loadInitialBookPreviews, setupShowMoreButton } from './Encapsulation/listButtonHandler.js';
 
 loadInitialBookPreviews(books, page, BOOKS_PER_PAGE, createPreview, dataListItems);
 setupShowMoreButton(dataListButton, dataListItems, matches, page, BOOKS_PER_PAGE, createPreview);
@@ -174,7 +174,7 @@ dataSearchAuthors.appendChild(authorsFragment)
  * 
 */
 
-import { filterAndDisplayBooks } from './filterBooks.js';
+import { filterAndDisplayBooks } from './Encapsulation/filterBooks.js';
 
 dataSearchForm.addEventListener('submit', event => {
   filterAndDisplayBooks(
@@ -195,7 +195,7 @@ dataSearchForm.addEventListener('submit', event => {
 Event listner for 'Show More', when show more is clicked more books are shown.
 */
 
-import { handleListButtonClick } from './listButtonHandler.js';
+import { handleListButtonClick } from './Encapsulation/listButtonHandler.js';
 
 dataListButton.addEventListener('click', () => {
   handleListButtonClick(page, result, BOOKS_PER_PAGE, dataListButton, dataListItems, createPreview);
