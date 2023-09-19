@@ -273,8 +273,6 @@ class Hello extends LitElement {
       <footer class="footer">
         Inspired by
         <a class="footer__link" href="https://tallycount.app/">Tally Count</a>,
-        Note that this is merely a student practice project for learning
-        JavaScript.
       </footer>
     </section>`;
   }
