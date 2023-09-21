@@ -2,15 +2,16 @@
  * @license
  * Copyright 2019 Google LLC
  * SPDX-License-Identifier: BSD-3-Clause
- */
+*/
+
 const t = window,
-  i =
-    t.ShadowRoot &&
-    (void 0 === t.ShadyCSS || t.ShadyCSS.nativeShadow) &&
-    "adoptedStyleSheets" in Document.prototype &&
-    "replace" in CSSStyleSheet.prototype,
-  s = Symbol(),
-  e = new WeakMap();
+i =   t.ShadowRoot &&
+(void 0 === t.ShadyCSS || t.ShadyCSS.nativeShadow) &&
+"adoptedStyleSheets" in Document.prototype &&
+"replace" in CSSStyleSheet.prototype,
+
+s = Symbol(),
+e = new WeakMap();
 class n {
   constructor(t, i, e) {
     if (((this._$cssResult$ = !0), e !== s))
@@ -36,27 +37,27 @@ class n {
   }
 }
 const o = (t) => new n("string" == typeof t ? t : t + "", void 0, s),
-  r = (t, ...i) => {
-    const e =
-      1 === t.length
-        ? t[0]
-        : i.reduce(
-            (i, s, e) =>
-              i +
-              ((t) => {
-                if (!0 === t._$cssResult$) return t.cssText;
-                if ("number" == typeof t) return t;
-                throw Error(
-                  "Value passed to 'css' function must be a 'css' function result: " +
-                    t +
-                    ". Use 'unsafeCSS' to pass non-literal values, but take care to ensure page security."
-                );
-              })(s) +
-              t[e + 1],
-            t[0]
-          );
-    return new n(e, t, s);
-  },
+r = (t, ...i) => {
+  const e =
+    1 === t.length
+      ? t[0]
+      : i.reduce(
+          (i, s, e) =>
+            i +
+            ((t) => {
+              if (!0 === t._$cssResult$) return t.cssText;
+              if ("number" == typeof t) return t;
+              throw Error(
+                "Value passed to 'css' function must be a 'css' function result: " +
+                  t +
+                  ". Use 'unsafeCSS' to pass non-literal values, but take care to ensure page security."
+              );
+            })(s) +
+            t[e + 1],
+          t[0]
+        );
+  return new n(e, t, s);
+},
   l = (s, e) => {
     i
       ? (s.adoptedStyleSheets = e.map((t) =>
@@ -399,6 +400,8 @@ class m extends HTMLElement {
   updated(t) {}
   firstUpdated(t) {}
 }
+
+
 /**
  * @license
  * Copyright 2017 Google LLC
@@ -905,6 +908,8 @@ const rt = (t, i, s) => {
   }
   return r._$AI(t), r;
 };
+
+
 /**
  * @license
  * Copyright 2017 Google LLC
@@ -945,19 +950,21 @@ class ct extends m {
     return D;
   }
 }
+
 (ct.finalized = !0),
-  (ct._$litElement$ = !0),
-  null === (lt = globalThis.litElementHydrateSupport) ||
-    void 0 === lt ||
-    lt.call(globalThis, { LitElement: ct });
+(ct._$litElement$ = !0),
+null === (lt = globalThis.litElementHydrateSupport) || void 0 === lt ||
+lt.call(globalThis, { LitElement: ct });
 const at = globalThis.litElementPolyfillSupport;
 null == at || at({ LitElement: ct });
+
 const dt = {
   _$AK: (t, i, s) => {
     t._$AK(i, s);
   },
   _$AL: (t) => t._$AL,
 };
+
 (null !== (ht = globalThis.litElementVersions) && void 0 !== ht
   ? ht
   : (globalThis.litElementVersions = [])
@@ -967,7 +974,7 @@ const dt = {
  * @license
  * Copyright 2021 Google LLC
  * SPDX-License-Identifier: BSD-3-Clause
- */
+*/
 export {
   ct as LitElement,
   r as css,
