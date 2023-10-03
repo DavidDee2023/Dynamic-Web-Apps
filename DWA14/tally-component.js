@@ -133,7 +133,7 @@ class Hello extends LitElement {
       border-left-color: #cacaca;
       border-bottom-color: #767474;
       border-right-color: #767474;
-      color: rgb(255, 255, 255);
+      color: blue;
       font-size: 1rem;
       font-weight: 300;
     }
@@ -152,8 +152,8 @@ class Hello extends LitElement {
       --sl-input-height-medium: 48px;
       --sl-input-border-width: 2px;
       background-color: transparent;
-      color: white;
-      font-size: 1.125rem;
+      color: blue;
+      font-size: 1.50rem;
     }
 
     sl-button.add::part(base) {

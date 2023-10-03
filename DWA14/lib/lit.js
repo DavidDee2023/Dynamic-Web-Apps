@@ -85,7 +85,7 @@ r = (t, ...i) => {
  * @license
  * Copyright 2017 Google LLC
  * SPDX-License-Identifier: BSD-3-Clause
- */ var u;
+*/ var u;
 const c = window,
   a = c.trustedTypes,
   d = a ? a.emptyScript : "",
